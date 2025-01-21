@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: eahycaf3y-nodejs-gitops
+  description: This is GitOps manifest for eahycaf3y-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: eahycaf3y-nodejs
+    backstage.io/kubernetes-id: eahycaf3y-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: eahycaf3y-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:eahycaf3y-nodejs
